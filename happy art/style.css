@@ -181,9 +181,7 @@ textarea:focus{
 	#first{
 		height:210px;
 	}
-	#logo{
-		float:none;
-	}
+	
 	#wrapper{
 		padding-top: 20px;
 	}
@@ -222,6 +220,9 @@ textarea:focus{
 		height:200px;
 	}
 	ul{
+		float:none;
+	}
+	#logo{
 		float:none;
 	}
 
