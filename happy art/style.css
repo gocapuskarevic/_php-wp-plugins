@@ -25,6 +25,9 @@ body{
     background-size: cover;
     height:400px;
 }
+#logo{
+	float:left;
+}
 #logo img{
 	width:300px;
 	height:150;
@@ -177,6 +180,9 @@ textarea:focus{
 @media screen and (max-width: 1370px){
 	#first{
 		height:210px;
+	}
+	#logo{
+		float:none;
 	}
 	#wrapper{
 		padding-top: 20px;
