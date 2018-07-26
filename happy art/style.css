@@ -90,7 +90,7 @@ main{
 
 #section{
 	margin:auto;
-	width:1500px;
+	width:1700px;
 	overflow: hidden;
 }
 
@@ -101,11 +101,17 @@ main{
 }
 #omg{
 	position:relative;
+	height:250px;
 }
 .products{
 	margin:auto;
-	height:240px;
 	width:260px;
+	height:250px;
+}
+
+article a{
+	color:#ff8547;
+	text-decoration: underline;
 }
 
 #gallery{
@@ -203,7 +209,6 @@ textarea:focus{
 
  	#form{
  	padding:30px 10px;
-    height: 650px;
  	}
 
  	#form_inside{
@@ -233,7 +238,7 @@ textarea:focus{
 		margin:5px;
 		padding:10px;
 		border-radius: 15px;
-		background-color:rgba(255, 133, 71,0.8);
+		background-color:rgb(255, 133, 71);
 
 		color:#fff;
 	}
@@ -259,19 +264,20 @@ textarea:focus{
 	}
 	#form{
  	padding:30px 10px;
-    height: 650px;
+ 	height:700px;
  	}
 
  	#form_inside{
 		width:90%;
 		margin:auto;
-		overflow: visible;
 		padding-top: 100px;
 	}
 	#left{
 		float:none;
 		width:90px;
-		margin:20px 0 0 0;
+		padding:0;
+		margin-top:20px;
+		margin-right:5px;
 	}
 
 	#right{
