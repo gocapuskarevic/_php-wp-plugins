@@ -11,6 +11,33 @@ body{
 	padding: 0;
 }
 
+
+@keyframes animacija1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animacija2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animacija3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #wrapper{
 	/*background-color: rgba(0,0,0,0.7);*/
 	padding-top:50px;
@@ -36,9 +63,7 @@ header{
 	overflow: hidden;
 	padding-bottom: 30px;
 }
-#nav{
-	overflow: hidden;
-}
+
 
 ul{
 	list-style-type: none;
@@ -66,6 +91,18 @@ ul li a:hover{
 	background-color: rgba(255, 133, 71,0.8);
 	text-decoration: none;
 }
+
+#meni{
+	display: none;
+	font-weight: normal;
+	margin:5px;
+	padding:10px;
+	border-radius: 15px;
+	background-color:rgb(255, 133, 71);
+	text-align: center;
+	color:#fff;
+}
+
 
 h1,h2,h3{
 	font-family: 'Slabo 27px', serif;
@@ -111,7 +148,12 @@ main{
 
 article a{
 	color:#ff8547;
-	text-decoration: underline;
+	text-decoration: none;
+}
+
+article a:hover{
+	animation: povecaj 0.5s ease runing;
+
 }
 
 #gallery{
@@ -150,6 +192,12 @@ article a{
 	margin-top:20px;
 }
 
+#btn{
+	width:790px;
+	padding:5px;
+	border-radius: 5px;
+}
+
 footer{
 	clear: both;
 	margin:auto;
@@ -157,6 +205,8 @@ footer{
 }
 
 .form{
+	font-family: 'Dosis',sans-serif;
+	font-size: 20px;
 	background-color:rgba(200,200,200,0);
 	color:#fff;
 	border-bottom: 2px solid white;
@@ -166,9 +216,15 @@ footer{
 	line-height: 2em;
 	margin-bottom: 5px;
 }
+input{
+	width:200px;
+}
 ::placeholder{ 
 	color:#fff;
 	font-style: italic;
+	font-size: 21px;
+	line-height: 3em;
+	font-weight: 100;
 }
 input:focus{
 	outline: none;
@@ -179,8 +235,51 @@ input:focus{
 	border-bottom: 0;
 }
 
+textarea{
+
+	font-style: italic;
+	font-size: 21px;
+	line-height: 3em;
+	font-weight: 100;
+}
+
 textarea:focus{
 	outline: none;
+}
+
+#no_center{
+	text-align: left;
+	padding:20px;
+}
+
+#no_center h2::before{
+	content:url(images/gift.png);
+}
+
+
+#prva_animacija{
+	animation-name: animacija1;
+	animation-duration: 1s;
+}
+
+#druga_animacija{
+	animation-name:animacija2;
+	animation-duration: 3s;
+}
+
+#treca_animacija{
+	animation-name:animacija3;
+	animation-duration: 5s;
+}
+
+.slike{
+	display:flex;
+	justify-content: space-between;
+}
+
+.slike img{
+	width:200px;
+	height:150px;
 }
 
 @media screen and (max-width: 1370px){
@@ -203,6 +302,10 @@ textarea:focus{
 	width:260px;
 	margin-left: 15px;
 	}
+
+	section a:hover{
+		font-weight: bold;
+	}
 	aside{
 		margin-bottom: 20px;
 	}
@@ -219,6 +322,22 @@ textarea:focus{
 	}
 
 }
+
+
+
+@media screen and (max-width: 1000px){
+	.slike{
+	display:flex;
+	justify-content: space-between;
+}
+
+.slike img{
+	width:150px;
+	height:100px;
+}
+}
+
+
 /*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
 @media screen and (max-width: 850px){
 	#first{
@@ -227,10 +346,11 @@ textarea:focus{
 	#logo{
 		float:none;
 	}
+
+
 	ul{
 		float:none;
 	}
-
 
 	ul li{
 		display:block;
@@ -239,16 +359,34 @@ textarea:focus{
 		padding:10px;
 		border-radius: 15px;
 		background-color:rgb(255, 133, 71);
-
 		color:#fff;
 	}
 	ul li a{
 		text-decoration: none;
 		color:#fff;
 	}
+	#nav{
+		display: none;
+		margin-top: 0;
+	}
+
+	#meni{
+		display: block;
+	}
+
+	#meni:hover + #nav{
+		display: block;
+	}
+
+	#nav:hover{
+		display: block;
+	}
+
+
 	#section{
 		width:90%;
 	}
+
 	#section article{
 		float:none;
 		padding: 0px;
@@ -286,6 +424,17 @@ textarea:focus{
 		margin-top:20px;
 	}
 
+#btn{
+	width:90%;
+}
+.slike{
+	display:block;
+}
+
+.slike img{
+	width:200px;
+	height:150px;
+}
 
 
 }
