@@ -1,0 +1,44 @@
+<?php
+abstract class Osnova{
+    protected $ime_slike;
+    protected $naslov;
+    protected $sadrzaj;
+
+    public function __construct($ime,$naslov,$tekst){
+    	$this->ime_slike=$ime;
+    	$this->naslov=$naslov;
+    	$this->sadrzaj=$tekst;
+    }
+
+	abstract public function slika_naslov();
+	abstract public function tekst();
+}
+
+
+class Vest extends Osnova{
+	public function slika_naslov(){
+		$prikaz="<div>";
+		$prikaz.="<img src='".$this->ime_slike."'>";
+		$prikaz.="<h1>".$this->naslov."</h1>";
+		$prikaz.="</div>";
+		return $prikaz;
+	}
+
+	public function tekst(){
+		return "<p>".$this->sadrzaj."</p>";
+	}
+
+	public function prikazi_sve(){
+		echo $this->slika_naslov();
+		echo $this->tekst();
+	}
+}
+
+$prom = new Vest("https://static.igrice123.rs/slike/104509-92991/patrik-zvezda-:d-:d-:d-:d.jpg","Patrik zvezda","Vidi, ima samo jedan zub");
+$prom->prikazi_sve();
+//var_dump($prom);
+
+
+
+?>
+
