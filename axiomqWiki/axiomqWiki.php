@@ -75,8 +75,19 @@ class AxiomQWiki{
         add_action( 'wp_ajax_wiki_action_delete_wiki_user', array($this,'wiki_action_delete_wiki_user' ));
         
         //add body class
-        //add_filter( 'body_class', array($this, 'wiki_body_class') );
+        add_action( 'wp_footer', array($this, 'wiki_js_footer') );
         
+    }
+
+    public function wiki_js_footer(){ ?>
+
+        <script>
+            document.getElementsByTagName('body')[0].classList.add('wiki-wiki');
+            console.log('radis li');
+        </script>
+
+        <?php
+
     }
 
     public function wiki_javascript_ajax() { ?>
@@ -269,7 +280,6 @@ class AxiomQWiki{
             'supports' => $supports,
             'labels' => $labels,
             'public' => true,
-            'exclude_from_search' => true,
             'show_ui' => true,
             'show_in_menu' => true,
             'hierarchical' => false,
@@ -287,7 +297,6 @@ class AxiomQWiki{
 
     public function wiki_taxonomy(){
         $labels=array(
-            'hierarchical' => true,
             'name' => _x( 'Wiki category', 'taxonomy general name' ),
             'singular_name' => _x( 'Wiki category', 'taxonomy singular name' ),
             'search_items' =>  __( 'Search Wiki categories' ),
@@ -322,10 +331,6 @@ class AxiomQWiki{
         $position = 100;
     
         add_submenu_page( 'options-general.php', $page_title, $menu_title, $capability, $slug, $callback );
-    }
-
-    public function wiki_delete_user(){
-        
     }
 
     public function wiki_list_users(){

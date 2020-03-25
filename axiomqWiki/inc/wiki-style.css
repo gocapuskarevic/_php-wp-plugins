@@ -12,7 +12,17 @@
     margin: 50px 0;
 }
 
-.wiki_wiki a{
+.wiki-wiki a{
     transition:none;
 }
 
+.pagination{
+    margin: 50px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.page-numbers{
+    padding: 10px; 
+}
